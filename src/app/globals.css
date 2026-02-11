@@ -22,5 +22,100 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose p {
+  margin-bottom: 1em;
+  line-height: 1.7;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.25em;
+}
+
+.prose code {
+  background: rgb(243 244 246);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.875em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose code {
+    background: rgb(31 41 55);
+  }
+}
+
+.prose pre {
+  background: rgb(31 41 55);
+  color: rgb(229 231 235);
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid rgb(209 213 219);
+  padding-left: 1em;
+  color: rgb(107 114 128);
+  margin-bottom: 1em;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid rgb(209 213 219);
+  padding: 0.5em;
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose blockquote {
+    border-color: rgb(75 85 99);
+    color: rgb(156 163 175);
+  }
+
+  .prose th,
+  .prose td {
+    border-color: rgb(75 85 99);
+  }
+}
+
+.prose a {
+  color: rgb(37 99 235);
+  text-decoration: underline;
+}
+
+.prose img {
+  max-width: 100%;
+  border-radius: 0.5em;
 }
