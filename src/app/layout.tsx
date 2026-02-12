@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AdBanner } from "@/components/ads/AdBanner";
+import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <AdBanner slot="footer" />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
