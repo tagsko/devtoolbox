@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import { tools } from "@/lib/tools-registry";
 import { siteConfig } from "@/lib/site-config";
 import { ToolGrid } from "@/components/tools/ToolGrid";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

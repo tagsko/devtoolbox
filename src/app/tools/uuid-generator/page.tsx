@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: tool.name,
   description: tool.description,
   keywords: tool.keywords,
+  alternates: { canonical: `/tools/${tool.slug}` },
 };
 
 export default function UuidGeneratorPage() {
