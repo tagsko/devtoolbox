@@ -5,7 +5,7 @@ const CANONICAL_HOST = "thetoolbrew.com";
 export function middleware(request: NextRequest) {
   const host = request.headers.get("host") ?? "";
 
-  if (host !== CANONICAL_HOST && host !== `www.${CANONICAL_HOST}`) {
+  if (host !== CANONICAL_HOST) {
     const url = new URL(request.url);
     url.host = CANONICAL_HOST;
     url.protocol = "https";
