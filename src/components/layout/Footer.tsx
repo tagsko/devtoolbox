@@ -10,7 +10,19 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All tools are free and run
             entirely in your browser.
           </p>
-          <nav className="flex gap-6">
+          <nav className="flex flex-wrap gap-6">
+            <Link
+              href="/about"
+              className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            >
+              Contact
+            </Link>
             <Link
               href="/privacy"
               className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"

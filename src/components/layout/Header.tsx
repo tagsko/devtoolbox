@@ -20,6 +20,12 @@ export function Header() {
           >
             All Tools
           </Link>
+          <Link
+            href="/about"
+            className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            About
+          </Link>
         </nav>
       </div>
     </header>
