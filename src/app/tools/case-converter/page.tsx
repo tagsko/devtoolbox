@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getToolBySlug } from "@/lib/tools-registry";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import CaseConverterTool from "./CaseConverterTool";
+import { caseConverterContent } from "@/content/case-converter";
 
 const tool = getToolBySlug("case-converter")!;
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function CaseConverterPage() {
   return (
-    <ToolPageShell tool={tool}>
+    <ToolPageShell tool={tool} content={caseConverterContent}>
       <CaseConverterTool />
     </ToolPageShell>
   );

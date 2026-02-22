@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getToolBySlug } from "@/lib/tools-registry";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import HashGeneratorTool from "./HashGeneratorTool";
+import { hashGeneratorContent } from "@/content/hash-generator";
 
 const tool = getToolBySlug("hash-generator")!;
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function HashGeneratorPage() {
   return (
-    <ToolPageShell tool={tool}>
+    <ToolPageShell tool={tool} content={hashGeneratorContent}>
       <HashGeneratorTool />
     </ToolPageShell>
   );

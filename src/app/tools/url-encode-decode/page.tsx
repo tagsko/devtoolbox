@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getToolBySlug } from "@/lib/tools-registry";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import UrlEncodeTool from "./UrlEncodeTool";
+import { urlEncodeDecodeContent } from "@/content/url-encode-decode";
 
 const tool = getToolBySlug("url-encode-decode")!;
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function UrlEncodePage() {
   return (
-    <ToolPageShell tool={tool}>
+    <ToolPageShell tool={tool} content={urlEncodeDecodeContent}>
       <UrlEncodeTool />
     </ToolPageShell>
   );

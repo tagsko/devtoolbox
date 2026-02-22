@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getToolBySlug } from "@/lib/tools-registry";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import UuidGeneratorTool from "./UuidGeneratorTool";
+import { uuidGeneratorContent } from "@/content/uuid-generator";
 
 const tool = getToolBySlug("uuid-generator")!;
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function UuidGeneratorPage() {
   return (
-    <ToolPageShell tool={tool}>
+    <ToolPageShell tool={tool} content={uuidGeneratorContent}>
       <UuidGeneratorTool />
     </ToolPageShell>
   );

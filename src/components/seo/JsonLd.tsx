@@ -1,7 +1,7 @@
-import { Tool } from "@/types/tool";
+import { Tool, FAQItem } from "@/types/tool";
 import { siteConfig } from "@/lib/site-config";
 
-export function JsonLd({ tool }: { tool: Tool }) {
+export function JsonLd({ tool, faq }: { tool: Tool; faq?: FAQItem[] }) {
   const webApp = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -28,6 +28,21 @@ export function JsonLd({ tool }: { tool: Tool }) {
     })),
   };
 
+  const faqSchema = faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script
@@ -38,6 +53,12 @@ export function JsonLd({ tool }: { tool: Tool }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howTo) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
     </>
   );
 }

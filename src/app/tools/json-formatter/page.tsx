@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getToolBySlug } from "@/lib/tools-registry";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import JsonFormatterTool from "./JsonFormatterTool";
+import { jsonFormatterContent } from "@/content/json-formatter";
 
 const tool = getToolBySlug("json-formatter")!;
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function JsonFormatterPage() {
   return (
-    <ToolPageShell tool={tool}>
+    <ToolPageShell tool={tool} content={jsonFormatterContent}>
       <JsonFormatterTool />
     </ToolPageShell>
   );
